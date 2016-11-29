@@ -1,0 +1,23 @@
+{% if error %}
+{{ message }}
+{% else %}
+<h4>Settings</h4>
+<p>for {{ custom_user }}</p>
+<h3>Default Settings</h3>
+{% for setting in default_settings %}
+<p>{{ setting.name }} - {{ setting.value }}</p>
+{% endfor %}
+<h3>Group Settings</h3>
+{% for setting in group_settings %}
+<p>{{ setting.name }} - {{ setting.value }}</p>
+{% endfor %}
+<h3>User Settings</h3>
+{% for setting in user_settings %}
+<p>{{ setting.name }} - {{ setting.value }}</p>
+{% endfor %}
+<h4>Calculated Settings</h4>
+{{ custom_settings }}
+{% for k,v in custom_settings.items %}
+<p>{{ k }} - {{ v }}</p>
+{% endfor %}
+{% endif %}
