@@ -11,7 +11,6 @@ def index(request, user_id=None):
         custom_settings = {}
 
         # get the user's group
-        usersgroup = CustomUser
         custom_user = get_object_or_404(CustomUser, id=user_id)
 
         # get the default values
